@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>완전 힙한 공유 메모판</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">shared • realtime • collaborative</p>
+          <h1>완전 힙한 공유 메모판</h1>
+        </div>
+        <div class="connection-status">
+          <span id="connectionIndicator" class="status-dot"></span>
+          <span id="connectionText">연결 중...</span>
+        </div>
+      </header>
+
+      <main class="editor-solo">
+        <div class="editor-header">
+          <div>
+            <p class="hint">모든 사람이 이 메모를 메모 쌄게 게시되어 있어요</p>
+            <input id="noteTitle" placeholder="메모판 제목 (40자)" maxlength="40" />
+          </div>
+          <button id="saveBtn">저장</button>
+        </div>
+
+        <textarea id="memoInput" placeholder="여기다가 모든 젯체를 위한 공유 메모를 적어보세요..."></textarea>
+
+        <div class="bottom-bar">
+          <span id="status">접늹 대기 중...</span>
+          <div class="action-buttons">
+            <button id="clearBtn" class="ghost-btn">메모판 비우기</button>
+            <button id="deleteBtn" class="danger-btn">모두 내용 지우기</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="shared-script.js"></script>
+  </body>
+</html>
